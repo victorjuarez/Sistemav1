@@ -1,0 +1,26 @@
+<?php
+$acceso= $_COOKIE['acceso'];
+
+$tipo= $_COOKIE['tipo'];
+
+$id=$_COOKIE['usuario'];
+
+if($acceso !='2')
+
+{
+
+    $msg="No iniciaste sesion";
+    header("location:Index.php?msg=$msg");
+
+    exit;
+}
+
+
+session_start();
+if($_SESSION['acceso']=="" or $_SESSION['usuario']=="")
+{
+    $msg="No iniciaste sesion";
+    header("location:Index.php?msg=$msg");
+    exit;
+}
+?>
